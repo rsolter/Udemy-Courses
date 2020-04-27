@@ -1,10 +1,10 @@
-Intorduction to Machine Learning Notes
+Introduction to Machine Learning Notes
 
 
 Supervised Learning Overview:
 	Supervised Learning - algorithms are trained using labeled examples
 	Training Data - Used to train model parameters
-	Validation Data - Used to determin what the model hyperparameters to adjust
+	Validation Data - Used to determine what the model hyper-parameters to adjust
 	Test Data - Used to get some final performance metric
 
 Evaluating Performance - Classification
@@ -16,47 +16,55 @@ Evaluating Performance - Classification
 		Recall  - Ability of a model to find all the relevant cases within a dataset
 			- Number of true positives / (number of true positives + number of false negatives)
 		Precision - Ability of a model to identify only the relevant data points
-			  - Number of true positives/(numebr of true positives + number of false positives)
+			  - Number of true positives/(number of true positives + number of false positives)
 		F1 - The harmonic mean of precision and recall taking both metrics into account:
 		   - F1 = 2*[(precision*recall)/(precision+recall)]
-		   - Harmonic mean is used because it pubishes extreme values (a classifier with precision of 1, recal of 0 would have an F1 score of 0)
+		   - Harmonic mean is used because it punishes extreme values (a classifier with precision of 1, recall of 0 would have an F1 score of 0)
 	Confusion Matrix pulls all of this together to also include
 		Accuracy
 		Positive Predictive Value Precision
 		False Discovery Rate
 		False Omisssion Rate
-		Negative Predictive Value 
+		Negative Predictive Value
 		Positive Likelihood Ratio
 		Negative Likelihood Ratio
 	Type I error - False positive
 	Type II error - False negative
-	
-Evaluation Perfomance - Regression
+
+Evaluation Performance - Regression
 	Regression is a task where a model attempts to prediction continuous values
 	Mean Absolute Error -
 		- Will not punish large errors, outliers
-	Mean Squared Error - 
+	Mean Squared Error -
 		- Errors are reported in units squared
-	Root Mean Square Error (RMSE) - 
-		- Accounts for defficiencies in MAE, MSE
+	Root Mean Square Error (RMSE) -
+		- Accounts for deficiencies in MAE, MSE
 		- Context determines whether or not the RMSE is good or not
-		- Compare the error metric to the average value of the label in your dataset 
+		- Compare the error metric to the average value of the label in your dataset
 
 
 
 Linear Regression Theory
 	Regression - The propensity of values to regress or trend towards the average
 	Least Squares Method - Optimize model on the vertical distance between all observed points and distance to the line
-		Methods: sum of squared errors, sum of absolute errors
-	
+	RMSE - Most popular method is Root-mean, squared errors	which accounts the size of errors and reports error in unit terms
 
-Cross Validation 
+Cross Validation
 
 Bias/Variance Trade-off
+	Fundamental topic for understanding model Evaluation
+	Bias/Variance trade-off is the point at which we are just adding noise by adding model complexity
+	The training error may be going down, but the test error is going up
+	The model after the bias trade-off begins to over-fit
+
 
 Logistic Regression
+	Based upon sigmoid functions which return values between 0 and 1
+	This output/probability is used to assign a predicted class depending on the cut-off point
+	Determining a cut-off point. Is it always 0.5?
+	Model evaluation using a confusion matrix (TP, TN, FP (Type I Error), FN (Type II Error))
+	Overall Accuracy - (TP + TN) / N
+	Misclassification Rate - (FP + FN)/ N
+
 
 K Nearest Neighbors
-
-	
-
