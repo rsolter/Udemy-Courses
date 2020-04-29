@@ -13,7 +13,7 @@ Evaluating Performance - Classification
 	Types
 		Accuracy - Number of correction predictions/total number of predictions
 			 - Useful when target classes our well balanced,
-		Recall  - Ability of a model to find all the relevant cases within a dataset
+		Recall (sensitivity/true positive rate) - Ability of a model to find all the relevant cases within a dataset
 			- Number of true positives / (number of true positives + number of false negatives)
 		Precision - Ability of a model to identify only the relevant data points
 			  - Number of true positives/(number of true positives + number of false positives)
@@ -65,6 +65,14 @@ Logistic Regression
 	Model evaluation using a confusion matrix (TP, TN, FP (Type I Error), FN (Type II Error))
 	Overall Accuracy - (TP + TN) / N
 	Misclassification Rate - (FP + FN)/ N
+	Missing value Imputation - naive or by category (ex: imputing age by traveler class)
+	Creating dummy variables (pd.get_dummies) from categorical variables. Ensuring encoding doesn't lead to multicollinearity, linear dependence
+			
+
+
+
+
+
 
 
 K Nearest Neighbors
