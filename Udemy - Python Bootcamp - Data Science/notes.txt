@@ -10,7 +10,9 @@ Supervised Learning Overview:
 Evaluating Performance - Classification
 	Classification Error Metrics - all measurement variations of correct/incorrect
 	In the real world, not all correct/incorrect matches hold equal value, hence the multiple forms of evaluation
-	Types
+	
+	Types of Evaluation:
+	
 		Accuracy - Number of correction predictions/total number of predictions
 			 - Useful when target classes our well balanced,
 		Recall (sensitivity/true positive rate) - Ability of a model to find all the relevant cases within a dataset
@@ -20,6 +22,7 @@ Evaluating Performance - Classification
 		F1 - The harmonic mean of precision and recall taking both metrics into account:
 		   - F1 = 2*[(precision*recall)/(precision+recall)]
 		   - Harmonic mean is used because it punishes extreme values (a classifier with precision of 1, recall of 0 would have an F1 score of 0)
+
 	Confusion Matrix pulls all of this together to also include
 		Accuracy
 		Positive Predictive Value Precision
@@ -28,6 +31,7 @@ Evaluating Performance - Classification
 		Negative Predictive Value
 		Positive Likelihood Ratio
 		Negative Likelihood Ratio
+
 	Type I error - False positive
 	Type II error - False negative
 
@@ -69,10 +73,78 @@ Logistic Regression
 	Creating dummy variables (pd.get_dummies) from categorical variables. Ensuring encoding doesn't lead to multicollinearity, linear dependence
 			
 
-
-
-
-
-
-
 K Nearest Neighbors
+	Classification Training algorithm:
+	- Store all teh data
+	Classification Prediction Algorith:
+	- Calculate the distance from x to all points in your data
+	- Sort the points in your data by increasing distance from x
+	- Predict the majority label of the 'k' closest points
+
+	Choosing a k will affect what class a new point is assigned to.
+	- e.g. k=3 -> choose the 3 closest points, and predict teh label based on the majority
+
+	Pros:
+	- Simple
+	- Training is trivial (just sorting your data)
+	- Works with any number of classes
+	- Easy to add mroe data
+	- Few parameters:
+		- k
+		- Distance metric 
+
+	Cons:
+	- High prediction cost (worse for larger datasets)
+	- Not good with high dimensional data
+	- Categorical features don't work well
+
+
+	Other steps:
+	- distance-based so, requires scaling variables
+
+
+
+Decision Trees and Random Forests
+	Root - The node that performs the first split
+	Leaves - Terminal nodes that predict the outcome
+	Best splits are determined on the basis of entropy and information gain
+	Plainly speaking, best splits are based upon maximizing information gain 
+
+	Decision trees on their own do not have much predictive power as they are subject to the data sampled
+	Introducing bagging -->
+	Bootstrapped samples --> random samples with replacement
+	Random forests are an improvement on this method as they use many trees with a random sample of features chosen
+		- A new random sample of features is chosen for every single tree at every single split
+		- For classification, m (random sample of features) is typically chosen to be the square root of p (# of original features)
+	
+
+Support Vector Machines
+
+
+K Means Clustering
+
+
+Principal Component Analysis
+
+
+Recommender Systems
+
+	Extra reading: 'Recommender Systems' by Jannach and Zanker 
+	Advanced recommender systems require a heavy lienar algebra background
+	Two types of systems:
+		Collaborative Filtering - based on knowledge of users attitudes. More commonly used (better results, can do feature learning on its own)
+			Memory-based: computes cosine similarity
+			Model-based: uses single value decomposition (SVD)
+		Content-Based - focuses on attributes of the items and gives recs based off on similarity between items
+
+
+Natural Language Processing
+
+
+Neural Nets and Deep Learning
+
+
+Big Data and Spark with Python
+
+
+
