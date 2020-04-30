@@ -119,12 +119,54 @@ Decision Trees and Random Forests
 	
 
 Support Vector Machines
-
+	Non-probabilistic binary linear classifier
+	SVM model is a representation of the examples as points in space, mapped into two separate categories and separated by a gap
+	New examples are mapped into the same space and predicted to belong to a category based on which side of the gap they fall on
+	The gap is represented by a hyperplane
+	Hyperplane is chosen based upon maximizing the margin between the classes
+	Support vectors are those dividing hyperplanes which touch observations in either class. The limits of the gap
+	Kernel trick - viewing data in +1 higher dimension allows for a separating line
+	Tuned with grid search
+		C
+		Gamma
 
 K Means Clustering
+	Goal is to divide data into distrincy groups such that observations within each group are similar
+	Examples
+	- Cluster similar documents
+	- Cluster customers based on Features
+	- Market segmentation
+	- Identify similar physical groups
+
+	K Means algorithm:
+	- Choose a numebr of clusters "K"
+	- Randomly assign each point to a cluster
+	- Until clusters stop changing, repeat the following:
+		- For each cluster, compute the clsuter centroid by taking the mean vector of poitns in the cluster
+		- Assign each data point to the cluster for which the centroid is closest
+
+	Chosing a K value: One method is using the elbow method.
+	- Compute the SSE for some values of K (sum of squared distance between each member of the cluster and its centroid)
+	- Re-compute for multiple values of K
+	- SSE will necessairily decrease with larger values of K
+	- Plot k against SSE and look for elbow in chart
+	
 
 
-Principal Component Analysis
+
+Principal Component Analysis (PCA)
+
+Unsupervised learning technique used to understand the interrelations among a set of variables in order to identify the underlying structure of those variables.
+It is also sometimes known as a general factor analysis
+Where regression determines a line of best fit to a dataset, factor analysis determines several orthogoal lines of best fit to the data set.
+n-Dimensional space is the variable sample space. There are as many dimensions as there are variables.
+<<Good visualizations of this in lecture>>
+Used on a dataset with a large number fo variables, we can compress the amount of explained variation to just a few components. 
+The challenge is interpreting those components
+Requires standardizing of data
+Used for analysis of data, not for creating a model
+
+
 
 
 Recommender Systems
