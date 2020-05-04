@@ -10,9 +10,9 @@ Supervised Learning Overview:
 Evaluating Performance - Classification
 	Classification Error Metrics - all measurement variations of correct/incorrect
 	In the real world, not all correct/incorrect matches hold equal value, hence the multiple forms of evaluation
-	
+
 	Types of Evaluation:
-	
+
 		Accuracy - Number of correction predictions/total number of predictions
 			 - Useful when target classes our well balanced,
 		Recall (sensitivity/true positive rate) - Ability of a model to find all the relevant cases within a dataset
@@ -71,7 +71,7 @@ Logistic Regression
 	Misclassification Rate - (FP + FN)/ N
 	Missing value Imputation - naive or by category (ex: imputing age by traveler class)
 	Creating dummy variables (pd.get_dummies) from categorical variables. Ensuring encoding doesn't lead to multicollinearity, linear dependence
-			
+
 
 K Nearest Neighbors
 	Classification Training algorithm:
@@ -91,7 +91,7 @@ K Nearest Neighbors
 	- Easy to add mroe data
 	- Few parameters:
 		- k
-		- Distance metric 
+		- Distance metric
 
 	Cons:
 	- High prediction cost (worse for larger datasets)
@@ -108,7 +108,7 @@ Decision Trees and Random Forests
 	Root - The node that performs the first split
 	Leaves - Terminal nodes that predict the outcome
 	Best splits are determined on the basis of entropy and information gain
-	Plainly speaking, best splits are based upon maximizing information gain 
+	Plainly speaking, best splits are based upon maximizing information gain
 
 	Decision trees on their own do not have much predictive power as they are subject to the data sampled
 	Introducing bagging -->
@@ -116,7 +116,7 @@ Decision Trees and Random Forests
 	Random forests are an improvement on this method as they use many trees with a random sample of features chosen
 		- A new random sample of features is chosen for every single tree at every single split
 		- For classification, m (random sample of features) is typically chosen to be the square root of p (# of original features)
-	
+
 
 Support Vector Machines
 	Non-probabilistic binary linear classifier
@@ -129,6 +129,7 @@ Support Vector Machines
 	Tuned with grid search
 		C
 		Gamma
+	See more here - https://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html
 
 K Means Clustering
 	Goal is to divide data into distrincy groups such that observations within each group are similar
@@ -150,28 +151,35 @@ K Means Clustering
 	- Re-compute for multiple values of K
 	- SSE will necessairily decrease with larger values of K
 	- Plot k against SSE and look for elbow in chart
-	
+
 
 
 
 Principal Component Analysis (PCA)
 
+First lecture---
 Unsupervised learning technique used to understand the interrelations among a set of variables in order to identify the underlying structure of those variables.
 It is also sometimes known as a general factor analysis
 Where regression determines a line of best fit to a dataset, factor analysis determines several orthogoal lines of best fit to the data set.
 n-Dimensional space is the variable sample space. There are as many dimensions as there are variables.
 <<Good visualizations of this in lecture>>
-Used on a dataset with a large number fo variables, we can compress the amount of explained variation to just a few components. 
+Used on a dataset with a large number of variables, we can compress the amount of explained variation to just a few components.
 The challenge is interpreting those components
-Requires standardizing of data
+Requires standardization of data (from sklearn.preprocessing import StandardScaler)
 Used for analysis of data, not for creating a model
 
+Second lecture---
+PCA allows us to select the number of components we want to keep when creating PCA object
+The components correspond to (linear) combinations of the original features
+(https://georgemdallas.wordpress.com/2013/10/30/principal-component-analysis-4-dummies-eigenvectors-eigenvalues-and-dimension-reduction/)
+https://stats.stackexchange.com/questions/143905/loadings-vs-eigenvectors-in-pca-when-to-use-one-or-another
+How to fit this in: PCA can be used to come up with features that are then fed into a classifier for example
 
 
 
 Recommender Systems
 
-	Extra reading: 'Recommender Systems' by Jannach and Zanker 
+	Extra reading: 'Recommender Systems' by Jannach and Zanker
 	Advanced recommender systems require a heavy lienar algebra background
 	Two types of systems:
 		Collaborative Filtering - based on knowledge of users attitudes. More commonly used (better results, can do feature learning on its own)
@@ -181,12 +189,17 @@ Recommender Systems
 
 
 Natural Language Processing
+	Bag of words -> vectorizing documents into vectors with word counts, comparing vector similarity using cosine similarity
+
+	TF-IDF (Term Frequency - Inverse Document Frequency)
+		Term Frequency: TF(d,t) Number of occurrences of term t in document d
+		IDF(t) = log(D/t) where D is total number of Documents, t= number of documents with the terms
+		TF-IDF : W = tf * log(N/df)
+
+
 
 
 Neural Nets and Deep Learning
 
 
 Big Data and Spark with Python
-
-
-
